@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "Add copy feature to colorhunt.co",
+	"description": "Math2001 extension",
+	"version": "1.0",
+	"browser_action": {
+		"default_icon": "icon.png"
+	},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": [
+		"http://*/*",
+		"https://*/*",
+		"activeTab",
+		"tabs"
+	],
+	"content_scripts": [ 
+		{
+			"js": [ "injected.js" ],
+			// "matches": [ "\u003Call_urls>" ]
+			"matches": [ "http://colorhunt.co/*", "https://colorhunt.co/*" ]
+		} 
+	]
+}
